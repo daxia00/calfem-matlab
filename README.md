@@ -21,3 +21,11 @@ help beam2e
 
 The help text for the beam2e command should appear if CALFEM is correctly 
 installed.
+
+### Update Log
+#### assem函数
+
+- **assem()**：提高了组装大型刚度矩阵的速度。实测：使用Q4单元，单元数量为200× 200时速度提高了1900倍。
+- **extract_ed()**: 提高了从全局位移向量里提取单元位移的速度。实测：使用Q4单元，单元数量为200×200时速度提高了330倍。
+
+
