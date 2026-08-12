@@ -1,8 +1,8 @@
-%% test_soli8s2_fields.m
-% soli8s2 —— 用"不同位移场"补充验证 (与 test_soli8s2.m 互补)
+%% test_soli8s_fields.m
+% soli8s —— 用"不同位移场"补充验证 (与 test_soli8s.m 互补)
 %
 % 运行方式:
-%   在 fem 目录命令行输入:  test_soli8s2_fields
+%   在 fem 目录命令行输入:  test_soli8s_fields
 %   或打开本文件后点"运行"(F5)
 %
 % 本文件用更丰富的位移场验证结果是否正确:
@@ -51,7 +51,7 @@ for ir = 1:3
     ed(1:3:22) = strain0(1)*x + (strain0(4)/2)*y + (strain0(6)/2)*z;   % u
     ed(2:3:23) = (strain0(4)/2)*x + strain0(2)*y + (strain0(5)/2)*z;   % v
     ed(3:3:24) = (strain0(6)/2)*x + (strain0(5)/2)*y + strain0(3)*z;   % w
-    [es,et] = soli8s2(x,y,z,[ir],D,ed);
+    [es,et] = soli8s(x,y,z,[ir],D,ed);
     ngp = ir^3;
     e1 = relerr(et, repmat(strain0', ngp, 1));            % 应变 vs 期望
     e2 = relerr(es, repmat((D*strain0)', ngp, 1));        % 应力 vs 期望
@@ -75,7 +75,7 @@ ed(1:3:22) = a1*x + a2*x.*y + a3*x.*z;   % u
 ed(2:3:23) = b1*y + b2*x.*y;             % v
 ed(3:3:24) = g1*z + g2*y.*z;             % w
 for ir = 1:3
-    [es,et,eci] = soli8s2(x,y,z,[ir],D,ed);
+    [es,et,eci] = soli8s(x,y,z,[ir],D,ed);
     et_exp = [a1 + a2*eci(:,2) + a3*eci(:,3), ...   % epsx
               b1 + b2*eci(:,1), ...                 % epsy
               g1 + g2*eci(:,2), ...                 % epsz
@@ -106,7 +106,7 @@ edR(3:3:24) = -wy*x + wx*y;   % w = -θy*x + θx*y
 for ir = 1:3
     for t = 1:2
         if t==1, ed = edT; name = '平移'; else, ed = edR; name = '转动'; end
-        [es,et] = soli8s2(x,y,z,[ir],D,ed);
+        [es,et] = soli8s(x,y,z,[ir],D,ed);
         e_et = max(abs(et(:)));   % 应变: 应精确为 0(机器精度 ~1e-19)
         e_es = max(abs(es(:)));   % 应力 = D*应变, 底噪被 D(~1e11)放大成 ~1e-8 Pa
         ok = (e_et < 1e-12) && (e_es < 1e-6);   % 应力只检查"绝对底噪"量级
@@ -130,7 +130,7 @@ for n = [1 2 4]
     et_all = zeros(ne*8,6); eci_all = zeros(ne*8,3);
     p = 0;
     for e = 1:ne
-        [~, et1, eci1] = soli8s2(exg(e,:), eyg(e,:), ezg(e,:), [2], D, edg(e,:));
+        [~, et1, eci1] = soli8s(exg(e,:), eyg(e,:), ezg(e,:), [2], D, edg(e,:));
         et_all(p+1:p+8,:) = et1;  eci_all(p+1:p+8,:) = eci1;  p = p+8;
     end
     exact = [2*cq*eci_all(:,1), zeros(size(eci_all,1),5)];   % epsx=2cx, 其余 0
@@ -147,7 +147,7 @@ fprintf('\n================================================\n');
 if nFail==0
     fprintf('ALL TESTS PASSED  (%d/%d)\n', nPass, nPass+nFail);
 else
-    fprintf('FAILED: %d/%d 项未通过, 请检查 soli8s2.m\n', nFail, nPass+nFail);
+    fprintf('FAILED: %d/%d 项未通过, 请检查 soli8s.m\n', nFail, nPass+nFail);
 end
 
 function s = status(ok)
@@ -158,7 +158,7 @@ end
 function [exg,eyg,ezg,edg] = genQuadMesh(n, cq)
 % 生成 [-1,1]^3 上 n×n×n 的 8 节点六面体网格;
 % 节点位移场 u = cq*x^2, v = w = 0 (二次场, 不在三线性单元空间内)
-% 单元局部节点序与 soli8s2 一致:
+% 单元局部节点序与 soli8s 一致:
 %   [(-1,-1,-1),(1,-1,-1),(1,1,-1),(-1,1,-1),(-1,-1,1),(1,-1,1),(1,1,1),(-1,1,1)]
 h  = 2/n;  Np = n+1;
 X = zeros(Np,Np,Np); Y = X; Z = X;
