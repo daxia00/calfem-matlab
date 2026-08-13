@@ -1,10 +1,14 @@
-# calfem4TOfuncs
+# TOptLab
+
+**Topology Optimization Laboratory · 拓扑优化实验室**
 
 **适用于拓扑优化算法快速验证的纯 MATLAB 功能函数库**
 **A pure-MATLAB function library for the rapid validation of topology optimization algorithms**
 
 - **[简体中文](./README_zh.md)**
 - **[English](./README_en.md)**
+
+> **命名说明 / About the name**：`TOptLab` = **T**opology **Opt**imization **Lab**oratory（拓扑优化实验室），直指核心用途——算法快速验证；其中 `TOpt` 是拓扑优化（Topology Optimization）领域的通用缩写，易检索、好传播。
 
 ## 项目简介 / About
 

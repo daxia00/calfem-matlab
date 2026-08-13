@@ -1,4 +1,8 @@
-# Project Overview
+# TOptLab · Topology Optimization Laboratory
+
+> **About the name**: `TOptLab` stands for **T**opology **Opt**imization **Lab**oratory, pointing directly to its core purpose — the rapid validation of topology optimization algorithms. `TOpt` is a widely used abbreviation in the field of topology optimization, making the name easy to search for and easy to share.
+
+## Project Overview
 
 This project aims to build a **function library for the rapid validation of topology optimization algorithms**, implemented using pure MATLAB syntax with no dependency on third-party toolboxes. The current plan consists of two core modules:
 
