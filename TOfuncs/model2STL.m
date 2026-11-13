@@ -26,7 +26,7 @@ function model2STL(fout, varargin)
 %           'Format', 'ascii', 'Mode', 'cube', 'FaceColor', 'm', 'Plot', false)
 
 %   最后修改: 
-% H Yingvar 2026-09-01
+% Hying 2026-09-01
 
 % ---- 确定密度数据来源 ------------------------------------------------
 % 若第一个可选参数为数值/逻辑数组，则视为密度矩阵直接使用；

@@ -14,7 +14,7 @@ function x_new = BESO_update(x_old, alpha_i, vol_new, passive, AR_max, is_soft_k
 %   x_new - 更新后的设计变量
 
 % 最后修改: 
-% H Yingvar 2026-02-23
+% Hying 2026-02-23
 
 %% 初始化参数
 if nargin < 4

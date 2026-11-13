@@ -35,7 +35,7 @@ function [es,et,eci]=soli8s(ex,ey,ez,ep,D,ed)
 %              ngp x (3*rowed) (identical to the standard soli8s).
 %-------------------------------------------------------------
 
-% LAST MODIFIED: H Yingvar   2026-08-10
+% LAST MODIFIED: Hying   2026-08-10
 % Change Log:
 % 1. Add case `ir = 1` for 1x1x1 integration point (centre point) with weight 8.
 % 2. Adjust the cut components to the correct order： [sigxy sigyz sigxz].

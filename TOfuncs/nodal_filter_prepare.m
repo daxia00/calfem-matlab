@@ -15,7 +15,7 @@ function [node_weight_sum, node_weight_kernel, weight_elem2node] = nodal_filter_
 % alpha_i = node_alpha_i(1:end-1, 1:end-1) ./ sen_node_weight_sum; % 除以分母：过滤操作完成，因为是偶数核，核的中心认为是中间偏左上，所以最下一行和最后一列是多余的
 
 % 最后修改: 
-% H Yingvar 2026-01-07
+% Hying 2026-01-07
 
 %% 初始化和参数处理
 if nargin < 4

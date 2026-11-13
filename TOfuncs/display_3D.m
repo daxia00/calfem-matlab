@@ -18,7 +18,7 @@ function display_3D(rho, varargin)
 %   Smooth   : true 平滑显示（top3D125 配色）；false 体素彩色显示（缺省）
 
 %  最后修改: 
-% H Yingvar 2026-09-01
+% Hying 2026-09-01
 
 p = inputParser;
 addRequired(p, 'rho');

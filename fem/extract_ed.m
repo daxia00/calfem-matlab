@@ -12,7 +12,7 @@
 % OUTPUT: U_elem:  element displacement matrix
 %-------------------------------------------------------------
 
-% LAST MODIFIED: H Yingvar 2026-01-13
+% LAST MODIFIED: Hying 2026-01-13
 % Change Log:
 % 1. Remove the element number index from the first column of the `edof` matrix.
 % 2. Replace loops with matrix-based batch assignment.

@@ -17,7 +17,7 @@ function [Hs, h] = elemental_filter_prepare(nelx, nely, nelz, rmin, passive)
 % 三维: alpha_i = convn(alpha_i, h, 'same') ./ Hs;
 
 % 最后修改:
-% H Yingvar 2026-08-12
+% Hying 2026-08-12
 % change log:
 % 1. 支持三维输入（convn 与三维过滤核）
 % 2. 参数顺序调整为 (nelx, nely, nelz, rmin, passive)，二维问题时 nelz 输入 1 或空[]

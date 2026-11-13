@@ -44,7 +44,7 @@
 %  依赖：dissect（R2017a+，Graph and Network Algorithms 工具箱）。
 %-------------------------------------------------------------
 
-% LAST MODIFIED: H Yingvar   2026-08-13
+% LAST MODIFIED: Hying   2026-08-13
 % Changes:
 % 1. Optimize memory usage and computation speed when solving very large matrices. Principle: use sparse `Cholesky` decomposition + `dissect` nested dissection ordering.
 % 2. Add a reuse parameter; when [K] and [BC] are the same, allow reuse of cached data.

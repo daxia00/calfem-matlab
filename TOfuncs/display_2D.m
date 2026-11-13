@@ -21,7 +21,7 @@ function display_2D(rho, varargin)
 %              二分阈值 + 等值线清晰轮廓）；false 逐单元硬边显示（缺省）
 
 %  最后修改: 
-% H Yingvar 2026-09-27
+% Hying 2026-09-27
 
 p = inputParser;
 addRequired(p, 'rho');
